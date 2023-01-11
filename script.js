@@ -1,15 +1,19 @@
 // Canvas setup
+let canvasWidth = window.innerWidth;
+let canvasHeight = window.innerHeight;
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
-// set the canvas dimensions to match the window
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
 
-// add an event listener to update the canvas dimensions when the window is resized
 window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    if (canvasWidth !== window.innerWidth || canvasHeight !== window.innerHeight) {
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+    }
 });
 
 
