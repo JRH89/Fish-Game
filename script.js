@@ -1,8 +1,15 @@
 // Canvas setup
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = 800;
-canvas.height = 500;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
 
 let score = 0;
 let gameFrame = 0;
