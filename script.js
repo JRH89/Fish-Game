@@ -2,13 +2,16 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
-function resizeCanvas() {
+// set the canvas dimensions to match the window
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// add an event listener to update the canvas dimensions when the window is resized
+window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-}
+});
 
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
 
 
 let score = 0;
